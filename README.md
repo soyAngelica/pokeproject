@@ -4,7 +4,7 @@
 
 ## Description 🚀
 
-This project is a web application developed with React, TypeScript, and Vite.js. It utilizes the public Pokémon API (POKEAPI) to display information about different Pokémon. It includes animations from the libraries Animate.css and Gsap (GreenSock Animation Platform).
+This project is a web application developed with React, TypeScript, and Vite.js. It utilizes the public Pokémon API (POKEAPI) to display information about different Pokémon. It includes animations from the library Animate.css
 
 ## Installation 💻
 
