@@ -52,7 +52,7 @@
 
 
 .lightTheme p, .lightTheme h2  {
-  color: #2A596D !important;
+  color: #434A54 !important;
   transition: color 0.3s ease; 
 }
 
@@ -75,7 +75,7 @@
   content: "";
   width: 100%;
   display: block;
-  border: 1px solid #2A596D;
+  border: 1px solid #434A54;
   margin:7px 0px;
 }
 
@@ -85,7 +85,7 @@
 
 
 .lightTheme .card {
-  border: 2px solid #2A596D;
+  border: 2px solid #434A54;
 }
 
 .card {

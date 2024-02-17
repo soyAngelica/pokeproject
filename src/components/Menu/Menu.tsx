@@ -15,29 +15,27 @@ import PoisonImg from '../../assets/img/poison.svg';
 
 const ITEM_TYPES = [
   { name: 'Water', imgSrc: WaterImg },
-  { name: 'Fire', imgSrc: FireImg },
   { name: 'Grass', imgSrc: GrassImg },
+  { name: 'Fire', imgSrc: FireImg },
   { name: 'Electric', imgSrc: ElectricImg },
   { name: 'Ice', imgSrc: IceImg },
+  { name: 'Fairy', imgSrc: FairyImg },
+  { name: 'Normal', imgSrc: NormalImg },
   { name: 'Rock', imgSrc: RockImg },
   { name: 'Ghost', imgSrc: GhostImg },
-  { name: 'Dark', imgSrc: DarkImg },
-  { name: 'Normal', imgSrc: NormalImg },
-  { name: 'Fairy', imgSrc: FairyImg },
   { name: 'Psychic', imgSrc: PsychicImg },
   { name: 'Poison', imgSrc: PoisonImg },
+  { name: 'Dark', imgSrc: DarkImg },
 ];
 
-
 interface MenuProps {
+  theme: string;
   onClick: (type: any) => void;
 }
 
-
-const Menu = ({onClick}: MenuProps) => {
+const Menu = ({onClick, theme}: MenuProps) => {
   const menuContainer = document.querySelector(".menu");
   const menuItems = menuContainer?.querySelectorAll('.menu-item');
-
 
   const defaultItemScale = 1;
   const hoverItemScale = 1.5;
@@ -99,7 +97,7 @@ const Menu = ({onClick}: MenuProps) => {
           <div className="menu-item" key={type.name}>
             <button onClick={() => onClick(type.name.toLowerCase())}>
               <img className="img" src={type.imgSrc} alt={type.name} title={type.name} width="40" />
-              <span>{type.name}</span>
+              <span className={theme}>{type.name}</span>
             </button>
           </div>
         ))}

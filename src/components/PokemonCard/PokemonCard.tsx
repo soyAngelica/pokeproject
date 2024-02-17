@@ -17,13 +17,12 @@ import './PokemonCard.css';
 
 interface PokemonCardProps {
     pokemon: PokemonType;
+    theme: string;
 }
 
-const PokemonCard = ({ pokemon }: PokemonCardProps) => {
-    const [theme, setTheme] = useState<string>('darkTheme');
+const PokemonCard = ({ pokemon, theme }: PokemonCardProps) => {
     const [currentPokemon, setCurrentPokemon] = useState<PokemonType>(pokemon);
     const [animatedOut, setAnimatedOut] = useState<boolean>(false);
-
     const { name, type, weight, height, ability, description } = currentPokemon;
 
     useEffect(() => {
@@ -32,7 +31,6 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
             setTimeout(() => {
                 setAnimatedOut(false);
                 setCurrentPokemon(pokemon);
-                setTheme(pokemon.name === "dewgong" || pokemon.name === "pikachu" ? 'lightTheme' : 'darkTheme');
             }, 1000);
         }
     }, [pokemon]);

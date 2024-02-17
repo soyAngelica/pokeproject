@@ -1,3 +1,9 @@
+button, button:hover {
+    background: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
 .logo {
     position: absolute;
     top: 40px;
@@ -8,20 +14,11 @@
     padding-top: 40px;
 }
 
-
 .pokeball {
     position: absolute;
     top: 30px;
     right: 40px;
     animation: shaking .8s cubic-bezier(.455,.03,.515,.955) infinite both;
-
-}
-
-
-button, button:hover {
-    background: none !important;
-    outline: none !important;
-    border: none !important;
 }
 
 @keyframes shaking {

@@ -36,8 +36,27 @@
   display: block;
   text-align: center;
   position: relative;
-  top:-3px;
-  color: #2A596D; 
+  top:-3px; 
   display: none;
   transition: 500ms cubic-bezier(0.75, 0.82, 0.165, 1);
+}
+
+
+.lightTheme  {
+  color: #2A596D !important;
+  transition: color 0.3s ease; 
+}
+
+.darkTheme {
+  color: white !important;
+  transition: color 0.3s ease; 
+}
+
+
+@media (max-width: 960px) {
+  .menu {display: none;}
+}
+
+@media (max-height: 600px) {
+  .menu {display: none;}
 }

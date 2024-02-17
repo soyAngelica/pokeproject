@@ -17,12 +17,13 @@ export interface PokemonType {
 }
 
 const App = () => {
+  const [theme, setTheme] = useState<string>('darkTheme');
   const [pokemon, setPokemon] = useState<PokemonType>();
   const [isHovered, setIsHovered] = useState(false);
 
   const fetchPokemon = async (type?: any) => {
+    console.log(type);
     const pokemonNameFromType = POKEMONS.find(item => item.type === type)?.name;
-    console.log(pokemonNameFromType);
     const pokemonByRandom = POKEMONS[Math.floor(Math.random() * POKEMONS.length)].name;
     const pokemonName = type ? pokemonNameFromType  : pokemonByRandom;
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
@@ -45,8 +46,9 @@ const App = () => {
       ability: abilities[0].ability.name,
       description,
     };
-    
     setPokemon(pokemon);
+    setTheme(pokemon.name === "dewgong" || pokemon.name === "pikachu" ? 'lightTheme' : 'darkTheme');
+
   };
     
   useEffect(() => {
@@ -67,7 +69,6 @@ const App = () => {
   }, [isHovered]);
 
   const onClick = (type: any) => {
-    console.log("click");
     fetchPokemon(type);
   }
 
@@ -79,8 +80,8 @@ const App = () => {
         <button onClick={handleClick} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className='pokeball'>
           <img src={Pokeball} width={60} />
         </button>
-        {pokemon && <PokemonCard pokemon={pokemon} />}
-        <Menu onClick={onClick}/>
+        {pokemon && <PokemonCard pokemon={pokemon} theme={theme} />}
+        <Menu onClick={onClick} theme={theme}/>
       </div>
     </>
   );

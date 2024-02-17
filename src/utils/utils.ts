@@ -5,14 +5,14 @@ export const POKEMONS = [
     { name: 'charmander', type: 'fire' },
     { name: 'bulbasaur', type: 'grass' },
     { name: 'pikachu', type: 'electric' },
-    { name: 'dewgong', type: 'water' },
+    { name: 'dewgong', type: 'ice' },
+    { name: 'jigglypuff', type: 'fairy' },
+    { name: 'snorlax', type: 'normal' },
     { name: 'golem', type: 'rock' },
     { name: 'gengar', type: 'ghost' },
     { name: 'umbreon', type: 'dark' },
-    { name: 'snorlax', type: 'normal' },
-    { name: 'jigglypuff', type: 'normal' },
+    { name: 'ekans', type: 'poison' },
     { name: 'mewtwo', type: 'psychic' },
-    { name: 'ekans', type: 'poison' }
   ];
   
 
