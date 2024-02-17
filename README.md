@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+# Project Pokedex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React + TypeScript + Vite ⚛️
 
-Currently, two official plugins are available:
+## Description 🚀
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a web application developed with React, TypeScript, and Vite.js. It utilizes the public Pokémon API (POKEAPI) to display information about different Pokémon. It includes animations from the libraries Animate.css and Gsap (GreenSock Animation Platform).
 
-## Expanding the ESLint configuration
+## Installation 💻
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone this repository to your local machine.
+2. Open a terminal and navigate to the project directory.
+3. Run the command `npm install` to install the dependencies.
+4. Once the dependencies are installed, run the command `npm run dev` to start the development server.
+5. Open your web browser and go to `http://localhost:3000` to see the application in action.
 
-- Configure the top-level `parserOptions` property like this:
+## Credits 💡
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+For the project menu, I was inspired by the following video [MacOS Dock Using JavaScript ](https://www.youtube.com/watch?v=_Y1REGc1O5U).
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
