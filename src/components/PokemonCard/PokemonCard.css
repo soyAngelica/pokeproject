@@ -1,0 +1,130 @@
+
+.amaranth-regular {
+  font-family: "Amaranth", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.amaranth-bold {
+  font-family: "Amaranth", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.pokemon-card {
+  display: grid;
+  grid-template-columns: 55% 40%;
+  padding: 20px;
+  border-radius: 8px;
+  justify-content: center;
+}
+  
+.pokemon-image img {
+  display:block; margin: 0px auto
+}
+  
+  
+.pokemon-details h2 {
+  text-transform: capitalize;
+  line-height: 60px;
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 36px;
+}
+
+
+  
+.pokemon-details p {
+  margin: 0;
+  text-transform:capitalize;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 20px;
+}
+
+
+.description {
+  text-transform: inherit !important; 
+  margin-top:10px !important;
+}
+
+
+.lightTheme p, .lightTheme h2  {
+  color: #2A596D !important;
+  transition: color 0.3s ease; 
+}
+
+.darkTheme p, .darkTheme h2 {
+  color: white !important;
+  transition: color 0.3s ease; 
+}
+
+
+.darkTheme h2:after {
+  content: "";
+  width: 100%;
+  display: block;
+  border: 1px solid white;
+  margin:7px 0px;
+}
+
+
+.lightTheme h2:after {
+  content: "";
+  width: 100%;
+  display: block;
+  border: 1px solid #2A596D;
+  margin:7px 0px;
+}
+
+.darkTheme .card {
+  border: 2px solid white;
+}
+
+
+.lightTheme .card {
+  border: 2px solid #2A596D;
+}
+
+
+
+.card {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.animate__animated.animate__backInLeft {
+  --animate-duration: 0.6s !important;
+}
+
+
+@media (max-width: 960px) {
+  .pokemon-card {
+    grid-template-columns: 90%;
+  }
+
+  .pokemon-image,
+  .pokemon-details {
+    margin: 20px auto;
+  }
+}
+
+
+@media (max-width: 660px) {
+  .pokemon-image img {
+    max-height: 250px;
+  }
+}
+
+
