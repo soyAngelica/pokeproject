@@ -1,8 +1,18 @@
 
 
-export const POKEMON_NAMES = [
-    'vaporeon', 'charmander', 'bulbasaur', 'pikachu', 'dewgong', 'golem', 'gengar', 'umbreon', 'snorlax',
-    'jigglypuff', 'mewtwo',  'ekans'
+export const POKEMONS = [
+    { name: 'vaporeon', type: 'water' },
+    { name: 'charmander', type: 'fire' },
+    { name: 'bulbasaur', type: 'grass' },
+    { name: 'pikachu', type: 'electric' },
+    { name: 'dewgong', type: 'water' },
+    { name: 'golem', type: 'rock' },
+    { name: 'gengar', type: 'ghost' },
+    { name: 'umbreon', type: 'dark' },
+    { name: 'snorlax', type: 'normal' },
+    { name: 'jigglypuff', type: 'normal' },
+    { name: 'mewtwo', type: 'psychic' },
+    { name: 'ekans', type: 'poison' }
   ];
   
 

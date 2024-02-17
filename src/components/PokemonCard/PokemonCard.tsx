@@ -1,18 +1,18 @@
 import 'animate.css';
 import { useEffect, useState } from 'react';
 import { PokemonType } from '../../App';
-import bulbasaurImg from '../../assets/img/bulbasaur.png';
-import charmanderImg from '../../assets/img/charmander.png';
-import dewgongImg from '../../assets/img/dewgong.png';
-import ekansImg from '../../assets/img/ekans.png';
-import gengarImg from '../../assets/img/gengar.png';
-import golemImg from '../../assets/img/golem.png';
-import jigglypuffImg from '../../assets/img/jigglypuff.webp';
-import mewtwoImg from '../../assets/img/mewtwo.png';
-import pikachuImg from '../../assets/img/pikachu.png';
-import snorlaxImg from '../../assets/img/snorlax.png';
-import umbreonImg from '../../assets/img/umbreon.png';
-import vaporeonImg from '../../assets/img/vaporeon.png';
+import BulbasaurImg from '../../assets/img/bulbasaur.png';
+import CharmanderImg from '../../assets/img/charmander.png';
+import DewgongImg from '../../assets/img/dewgong.png';
+import EkansImg from '../../assets/img/ekans.png';
+import GengarImg from '../../assets/img/gengar.png';
+import GolemImg from '../../assets/img/golem.png';
+import JigglypuffImg from '../../assets/img/jigglypuff.webp';
+import MewtwoImg from '../../assets/img/mewtwo.png';
+import PikachuImg from '../../assets/img/pikachu.png';
+import SnorlaxImg from '../../assets/img/snorlax.png';
+import UmbreonImg from '../../assets/img/umbreon.png';
+import VaporeonImg from '../../assets/img/vaporeon.png';
 import './PokemonCard.css';
 
 interface PokemonCardProps {
@@ -40,42 +40,42 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
     
     let imagePath;
 
-    switch (name.toLowerCase()) {
+    switch (name) {
         case 'vaporeon':
-            imagePath = vaporeonImg;
+            imagePath = VaporeonImg;
             break;
         case 'charmander':
-            imagePath = charmanderImg;
+            imagePath = CharmanderImg;
             break;
         case 'bulbasaur':
-            imagePath = bulbasaurImg;
+            imagePath = BulbasaurImg;
             break;
         case 'pikachu':
-            imagePath = pikachuImg;
+            imagePath = PikachuImg;
             break;
         case 'dewgong':
-            imagePath = dewgongImg;
+            imagePath = DewgongImg;
             break;
         case 'golem':
-            imagePath = golemImg;
+            imagePath = GolemImg;
             break;
         case 'gengar':
-            imagePath = gengarImg;
+            imagePath = GengarImg;
             break;
         case 'umbreon':
-            imagePath = umbreonImg;
+            imagePath = UmbreonImg;
             break;
         case 'snorlax':
-            imagePath = snorlaxImg;
+            imagePath = SnorlaxImg;
             break;
         case 'jigglypuff':
-            imagePath = jigglypuffImg;
+            imagePath = JigglypuffImg;
             break;
         case 'mewtwo':
-            imagePath = mewtwoImg;
+            imagePath = MewtwoImg;
             break;
         case 'ekans':
-            imagePath = ekansImg;
+            imagePath = EkansImg;
             break;
         default:
             imagePath = '';

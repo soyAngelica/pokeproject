@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Pokeball from './assets/img/pokeball.png';
 import Logo from './assets/img/pokedexplore.svg';
-import Background, { BackgroundTypeKey } from './components/Background/Background';
+import Background from './components/Background/Background';
+import Menu from './components/Menu';
 import PokemonCard from './components/PokemonCard/PokemonCard';
-import { POKEMON_NAMES } from './utils/utils';
+import { BackgroundTypeKey, POKEMONS } from './utils/utils';
 
 export interface PokemonType {
   name: string;
@@ -19,24 +20,32 @@ const App = () => {
   const [pokemon, setPokemon] = useState<PokemonType>();
   const [isHovered, setIsHovered] = useState(false);
 
-  const fetchPokemon = async () => {
-    const randomPokemonName = POKEMON_NAMES[Math.floor(Math.random() * POKEMON_NAMES.length)];
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemonName}`);
+  const fetchPokemon = async (type?: any) => {
+    const pokemonNameFromType = POKEMONS.find(item => item.type === type)?.name;
+    console.log(pokemonNameFromType);
+    const pokemonByRandom = POKEMONS[Math.floor(Math.random() * POKEMONS.length)].name;
+    const pokemonName = type ? pokemonNameFromType  : pokemonByRandom;
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
     const data = await response.json();
     const { name, types, weight, height, abilities, species } = data;
+
     const descriptionResponse = await fetch(species.url);
     const descriptionData = await descriptionResponse.json();
     const description = descriptionData.flavor_text_entries.find(
       (entry: any) => entry.language.name === 'es'
     ).flavor_text;
+
+    const mainType = name === 'jigglypuff' || name === 'dewgong' ? types[1].type.name : types[0].type.name;
+
     const pokemon = {
       name: name,
-      type: name==='jigglypuff' && types[1].type.name || name==='dewgong' && types[1].type.name || types[0].type.name,
+      type: mainType,
       weight,
       height,
       ability: abilities[0].ability.name,
       description,
     };
+    
     setPokemon(pokemon);
   };
     
@@ -57,6 +66,11 @@ const App = () => {
     return () => clearInterval(timer);
   }, [isHovered]);
 
+  const onClick = (type: any) => {
+    console.log("click");
+    fetchPokemon(type);
+  }
+
   return (
     <> 
       {pokemon && <Background type={pokemon.type} />}
@@ -66,6 +80,7 @@ const App = () => {
           <img src={Pokeball} width={60} />
         </button>
         {pokemon && <PokemonCard pokemon={pokemon} />}
+        <Menu onClick={onClick}/>
       </div>
     </>
   );
