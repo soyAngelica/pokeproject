@@ -6,8 +6,6 @@ import { BACKGROUND_TYPES, BackgroundTypeKey } from '../../utils/utils';
 interface BackgroundType {
     background1: string;
     background2: string;
-    background3: string;
-    background4: string;
     filter: string;
 }
 
@@ -25,10 +23,8 @@ const Background = ({ type }: BackgroundProps) => {
         gsap.to('.background', {
             duration: 1, 
             ease: 'power2.inOut', 
-            background: background.background1,
             background: background.background2,
-            background: background.background3,
-            background: background.background4,
+            backgroundColor: background.background1,
         });
         
     }, [type, background]);
