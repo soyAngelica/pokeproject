@@ -1,6 +1,7 @@
 import gsap from 'gsap';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BACKGROUND_TYPES, BackgroundTypeKey } from '../../utils/utils';
+import './Background.css';
 
 
 interface BackgroundType {
@@ -29,18 +30,10 @@ const Background = ({ type }: BackgroundProps) => {
         
     }, [type, background]);
 
-    const style: React.CSSProperties = {
-        height: '100vh',
-        width: '100vw',
-        overflow: 'hidden',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        zIndex: -1,
-    };
+    return <div className='background' style={{ filter: `'${background.filter}'` }}></div>;
 
-    return <div className='background' style={{ ...style, filter: `'${background.filter}'` }}></div>;
 }
+
 
 
 export default Background;
